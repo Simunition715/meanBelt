@@ -1,0 +1,39 @@
+
+
+<div ng-controller="UsersController as UC" ng-init="UC.current()">
+<!-- 	{{UC.polls}} -->
+
+<button class="blue" ng-click="UC.goToPolls()">Go to Polls</button><button class="red" ng-click="UC.logout()">Logout</button>
+<h1>{{UC.getCurrentUser().name}}, {{UC.current_poll.question}}? </h1>
+
+	<div>
+		<table border="1" cellpadding="4" bordercollapse="0">
+			<tr>
+				<td>Option</td>
+				<td>Current count to votes</td>
+				<td>Action</td>
+			</tr>
+<!-- 			{{UC.current_poll}} -->
+			<tr>
+				<td>{{UC.current_poll.option1.name}}</td>
+				<td>{{UC.current_poll.option1.count}}</td>
+				<td><button class="blue" ng-click="UC.vote(1)">Vote</button></td>
+			</tr>
+			<tr>
+				<td>{{UC.current_poll.option2.name}}</td>
+				<td>{{UC.current_poll.option2.count}}</td>
+				<td><button class="blue" ng-click="UC.vote(2)">Vote</button></td>
+			</tr>
+			<tr>
+				<td>{{UC.current_poll.option3.name}}</td>
+				<td>{{UC.current_poll.option3.count}}</td>
+				<td><button class="blue" ng-click="UC.vote(3)">Vote</button></td>
+			</tr>
+			<tr>
+				<td>{{UC.current_poll.option4.name}}</td>
+				<td>{{UC.current_poll.option4.count}}</td>
+				<td><button class="blue" ng-click="UC.vote(4)">Vote</button></td>
+			</tr>						
+		</table>
+	</div>
+</div>	

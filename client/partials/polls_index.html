@@ -1,0 +1,46 @@
+
+<div class="header">
+<h2>Polls</h2>
+</div>
+<div ng-controller="UsersController as UC" ng-init="UC.indexPoll()">
+<!-- 	{{UC.polls}} -->
+<h1>Welcome {{UC.current_user.name}}</h1>
+	<div>
+		<h5>Current Polls:</h5>
+		<button ng-click="UC.go()">Create a new poll</button>
+		<button ng-click="UC.logout()">Logout</button>
+
+	</div>
+	<div>
+		<input type="text" placeholder="Filter..." ng-model="searchText">
+	</div>	
+	<div>
+		<table border="1" cellpadding="4" bordercollapse="0">
+			<tr>
+				<td>Name</td>
+				<td>Survey Question</td>
+				<td>Date Posted</td>
+				<td>Action</td>
+			</tr>
+			<tr ng-repeat="poll in UC.polls | filter:searchText"">
+				<td>{{poll._user}}</td>
+				<td><a href="" ng-click="UC.filter(poll._id)">{{poll.question}}</td>
+				<td>{{poll.createdAt  | date:"M/dd/yyyy"}} <span am-time-ago="UC.poll.createdAt"></span></td>
+				<td><button ng-show="UC.current_user.name === poll._user" ng-click="UC.delete(poll._id)">Delete</button></td>
+			</tr>
+		</table>
+	</div>
+</div>	
+
+
+
+
+
+
+
+
+
+
+
+
+</div>

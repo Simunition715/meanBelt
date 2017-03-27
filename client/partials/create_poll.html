@@ -1,0 +1,25 @@
+<h5>Put the Question and Options Here!</h5>
+<div>
+	<form ng-submit="UC.createPoll(UC.newPoll)">
+		<label>New Poll</label>
+		<input ng-model="UC.newPoll.question">
+		<p>
+		<label>Option 1</label>
+		<input ng-model="UC.newPoll.option1.name">
+		</p>
+		<p>
+		<label>Option 2</label>
+		<input ng-model="UC.newPoll.option2.name">
+		</p>
+		<p>
+		<label>Option 3</label>
+		<input ng-model="UC.newPoll.option3.name">
+		</p>
+		<p>
+		<label>Option 4</label>
+		<input ng-model="UC.newPoll.option4.name">
+		</p>
+
+		<input type="submit" value="Create Poll">
+	</form>
+</div>
